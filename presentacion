@@ -1,0 +1,389 @@
+\documentclass[aspectratio=169,12pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[spanish]{babel}
+% --- Estilo según los Apunts de Comunicacions -----------------------
+% Letra sin serifa y muy legible (DejaVu Sans, de la familia de Verdana).
+% Con 12pt en un lienzo de 16x9 cm y la letra al 92 %, el cuerpo equivale a
+% unos 24 pt en una diapositiva normal, y \large a unos 28 pt.
+\usepackage[scaled=0.92]{DejaVuSans}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage{ccicons}
+\usepackage{tikz}
+
+\usetheme{Madrid}
+
+% Colores tranquilos: texto oscuro sobre fondo claro
+\definecolor{azul}{HTML}{2E4A5C}
+\definecolor{terra}{HTML}{A0583F}
+\definecolor{gris}{HTML}{4B5563}
+\definecolor{grisclaro}{HTML}{E5E7EB}
+\usecolortheme[named=azul]{structure}
+\setbeamercolor{normal text}{fg=black!90,bg=white}
+\setbeamercolor{alerted text}{fg=terra}
+% Título en color oscuro sobre fondo blanco, sin barra de color
+\setbeamercolor{frametitle}{fg=azul,bg=white}
+\setbeamertemplate{navigation symbols}{}
+% Pie discreto: solo el número de transparencia (útil en el turno de
+% preguntas). Sin nombre ni título repetidos en cada página.
+\setbeamertemplate{footline}{%
+  \hfill{\small\color{gris}\insertframenumber\,/\,\inserttotalframenumber}\hspace{0.4cm}\vspace{0.3cm}}
+\setbeamerfont{itemize/enumerate body}{size=\large}
+\setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setlength{\parskip}{0.2cm}
+
+% Cifra grande destacada
+\newcommand{\cifra}[2]{%
+  \begin{center}
+    {\color{terra}\fontsize{36}{40}\selectfont\bfseries #1}\\[0.2cm]
+    {\large #2}
+  \end{center}}
+
+% Portadilla de cada bloque: {número}{título}{persona}
+\newcommand{\bloque}[3]{%
+  \begin{frame}[plain]
+    \vfill
+    \begin{center}
+      {\color{terra}\large\bfseries Bloque #1}\\[0.3cm]
+      {\color{azul}\LARGE\bfseries #2\par}\vspace{0.5cm}
+      {\large #3}
+    \end{center}
+    \vfill
+  \end{frame}}
+
+% Fuente al pie de la transparencia
+\newcommand{\fuente}[1]{\vfill{\small\color{gris}#1\par}}
+
+\title[Software: control o participación]{Software como elemento de control o participación de la ciudadanía}
+\subtitle{Software libre y desarrollo social}
+\author[Grupo SLDS]{Silvia, Ossama, Mar, Héctor y Ona}
+\institute{UPC}
+\date{Noviembre de 2026\\[0.3cm]{\small\ccbysa\ Contenido bajo licencia CC BY-SA 4.0}}
+
+\begin{document}
+
+% ============================================================
+% PORTADA DEL GRUPO
+% ============================================================
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% ============================================================
+% PRESENTACIÓN
+% ============================================================
+\section{Presentación}
+\begin{frame}{Presentación}
+  \vspace{0.2cm}
+  {\large\alert{El software decide qué se vigila, qué se publica, cómo se vota y quién accede al Estado.}}
+
+  Solo el software libre permite a la ciudadanía auditar esas decisiones.
+  \vspace{0.3cm}
+  \begin{enumerate}
+    \item Reconocimiento facial y cámaras con IA \hfill \textit{Silvia}
+    \item Control cotidiano: del crédito social al altavoz de casa \hfill \textit{Ossama}
+    \item Espacio público digital: desinformación y censura \hfill \textit{Mar}
+    \item Votación electrónica \hfill \textit{Héctor}
+    \item Administración electrónica \hfill \textit{Ona}
+  \end{enumerate}
+\end{frame}
+
+% ============================================================
+% BLOQUE 2 · SILVIA
+% ============================================================
+\section{Reconocimiento facial}
+\bloque{2}{Reconocimiento facial\\y cámaras con IA}{Silvia}
+
+% 2.2 · Cómo identifica una cámara con IA
+\begin{frame}{Cómo identifica una cámara con IA}
+  \begin{center}
+  \begin{tikzpicture}[
+      caja/.style={draw=azul,very thick,rounded corners=4pt,minimum width=3.6cm,minimum height=1.5cm,align=center,font=\large},
+      flecha/.style={->,very thick,draw=gris}]
+    \node[caja] (a) at (0,0) {Captura\\del rostro};
+    \node[caja] (b) at (4.7,0) {Vector\\biométrico};
+    \node[caja] (c) at (9.4,0) {Comparación\\con una base};
+    \draw[flecha] (a) -- (b);
+    \draw[flecha] (b) -- (c);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{0.3cm}
+  \begin{columns}[T]
+    \column{0.45\textwidth}
+      \begin{center}
+        {\color{azul}\fontsize{30}{34}\selectfont\bfseries 1:1}\\[0.1cm]
+        {\large\bfseries Verificación}\\
+        {\large «¿Eres quien dices ser?»}
+      \end{center}
+    \column{0.45\textwidth}
+      \begin{center}
+        {\color{terra}\fontsize{30}{34}\selectfont\bfseries 1:N}\\[0.1cm]
+        {\large\bfseries Identificación masiva}\\
+        {\large «¿Quién eres?»}
+      \end{center}
+  \end{columns}
+\end{frame}
+
+% 2.3 · Sesgos
+\begin{frame}{El mito de la neutralidad algorítmica}
+  {\large Error al clasificar el género (Gender Shades, 2018)}
+  \begin{center}
+  \begin{tikzpicture}[x=0.2cm,y=1cm,font=\large]
+    % 34,7 % ocupa 6,94 cm
+    \foreach \y/\emp/\a/\b/\ta/\tb in {0/IBM/34.7/0.3/{34,7}/{0,3}, -1.25/Face++/34.5/0.8/{34,5}/{0,8}, -2.5/Microsoft/20.8/0.05/{20,8}/{0,0}}{
+      \node[anchor=east,font=\large\bfseries] at (-1,\y-0.22) {\emp};
+      \fill[terra] (0,\y) rectangle (\a,\y-0.38);
+      \node[anchor=west,font=\bfseries] at (\a+0.6,\y-0.19) {\ta\,\%};
+      \fill[gris] (0,\y-0.45) rectangle (\b,\y-0.83);
+      \node[anchor=west,font=\bfseries] at (\b+0.6,\y-0.64) {\tb\,\%};
+    }
+  \end{tikzpicture}\\[0.2cm]
+  {\large\textcolor{terra}{\rule{0.35cm}{0.35cm}}~Mujeres de piel oscura\qquad\textcolor{gris}{\rule{0.35cm}{0.35cm}}~Hombres de piel clara}
+  \end{center}
+  {\large NIST: falsos positivos de \alert{\textbf{10 a 100 veces}} más según demografía}
+  \fuente{Buolamwini y Gebru, PMLR 81 (2018) · NIST IR 8280 (2019)}
+\end{frame}
+
+% 2.4 · Marco legal
+\begin{frame}{El freno europeo: EU AI Act}
+  \begin{itemize}
+    \item Biometría remota en tiempo real: \alert{\textbf{prohibida}}*
+    \item Bases faciales por \textit{scraping} masivo: prohibidas
+    \item Identificación diferida: sistema de alto riesgo
+    \item ¿Y una matrícula? \textbf{No es biometría}
+  \end{itemize}
+  \fuente{* Uso policial, salvo 3 excepciones · Reglamento (UE) 2024/1689}
+\end{frame}
+
+% 2.5 · Flock: tecnología
+% (Si conseguís una foto libre de una cámara Flock, de 1024x768 o más y
+% con licencia CC BY / CC BY-SA, ponedla en una columna a la derecha.)
+\begin{frame}{Flock Safety: vigilancia sin rostro}
+  \begin{itemize}
+    \item \alert{\textbf{+120.000}} cámaras en 49 estados
+    \item Sin reconocimiento facial: «huella del vehículo»
+    \item Matrícula, color, marca, baca, pegatinas
+  \end{itemize}
+  \fuente{Sen. Hawley (26/08/2026) · Robinson v. Commonwealth (Virginia, 2026)}
+\end{frame}
+
+% 2.6 · Flock: escala
+\begin{frame}{De leer matrículas a seguir personas}
+  \begin{itemize}
+    \item Busca coches \alert{\textbf{sin matrícula}}: marca, modelo, llantas
+    \item Red compartida entre agencias de todo el país
+    \item Nova: de la matrícula a la persona
+    \item OS Investigate: la IA deduce tus «asociados»
+  \end{itemize}
+  \fuente{Robinson v. Commonwealth · 404 Media (2025) · WIRED (2026)}
+\end{frame}
+
+% 2.7 · Controversias
+\begin{frame}{Abusos sin orden judicial}
+  \begin{itemize}
+    \item Sin orden judicial: los tribunales lo avalan, por ahora
+    \item Al menos 50 agentes acusados de uso indebido
+    \item 26 de ellos, por espiar a parejas o exparejas
+    \item Un agente: \alert{\textbf{2.048}} búsquedas sobre su víctima
+  \end{itemize}
+  \fuente{Robinson v. Commonwealth · Washington Post (04/08/2026) · CNN}
+\end{frame}
+
+% 2.8 · Caso inmigración
+\begin{frame}{La puerta trasera de la red}
+  \begin{columns}[T]
+    \column{0.31\textwidth}
+      \begin{center}
+        {\color{azul}\fontsize{44}{48}\selectfont\bfseries 8}\\[0.2cm]
+        {\large\bfseries Puerta delantera}\\[0.1cm]
+        {\large Acceso directo dado a la Patrulla Fronteriza}
+      \end{center}
+    \column{0.31\textwidth}
+      \begin{center}
+        {\color{terra}\fontsize{44}{48}\selectfont\bfseries 10}\\[0.2cm]
+        {\large\bfseries Puerta trasera}\\[0.1cm]
+        {\large Redes consultadas por la Patrulla sin permiso}
+      \end{center}
+    \column{0.31\textwidth}
+      \begin{center}
+        {\color{azul}\fontsize{44}{48}\selectfont\bfseries 89}\\[0.2cm]
+        {\large\bfseries Puerta lateral}\\[0.1cm]
+        {\large Redes en una búsqueda local con motivo «ICE»}
+      \end{center}
+  \end{columns}
+  \fuente{UW Center for Human Rights, «Leaving the Door Wide Open», 2025}
+\end{frame}
+
+% 2.9 · Reacción social
+\begin{frame}{La presión ciudadana frena la red}
+  \begin{itemize}
+    \item \alert{\textbf{303}} gobiernos locales abandonan sus lectores de matrículas
+    \item Denver y Mountain View rompen con Flock
+    \item Amazon Ring cancela su alianza (feb. 2026)
+    \item El Senado de EE.\,UU. abre una investigación
+  \end{itemize}
+  \fuente{Institute for Justice (12/11/2026) · Ring (12/02/2026) · Sen. Hawley}
+\end{frame}
+
+% 2.10 · Alternativa libre
+% (Si añadís una captura del mapa de maps.deflock.org u OpenStreetMap,
+% indicad «Datos © OpenStreetMap contributors, ODbL».)
+\begin{frame}{DeFlock: auditar con software libre}
+  \begin{itemize}
+    \item DeFlock (MIT): mapa ciudadano en \textbf{OpenStreetMap}
+    \item \alert{\textbf{109.577}} cámaras Flock mapeadas
+    \item Frigate (MIT): matrículas en tu propio servidor
+    \item Local $\neq$ inocuo: cambia quién controla
+  \end{itemize}
+  \fuente{deflock.org · Pew Research Center (09/11/2026) · Frigate NVR}
+\end{frame}
+
+% 2.11 · Conclusión del bloque
+\begin{frame}{En la calle, el código ya es ley}
+  \vspace{0.3cm}
+  {\Large Infraestructura \alert{\textbf{privada}} y opaca: vigilancia sin control democrático.\par}
+  \vspace{0.8cm}
+  {\Large Código y datos abiertos: de promesas a garantías verificables.\par}
+\end{frame}
+
+% ============================================================
+% BLOQUE 3 · OSSAMA
+% ============================================================
+\section{Control cotidiano}
+\bloque{3}{Control cotidiano: del crédito\\social al altavoz de casa}{Ossama}
+
+% ============================================================
+% BLOQUE 4 · MAR
+% ============================================================
+\bloque{4}{Espacio público digital:\\desinformación y censura}{Mar}
+
+\section{Introducción}
+\begin{frame}{Tres decisiones que hoy toma el software}
+  \begin{itemize}
+    \item \textbf{Qué vemos:} algoritmos que ordenan el debate público.
+    \item \textbf{Qué creemos:} microsegmentación y deepfakes.
+    \item \textbf{Si podemos conectarnos:} apagones de internet.
+  \end{itemize}
+  \vspace{0.5cm}
+  {\large\alert{Y una respuesta: el software libre.}}
+\end{frame}
+
+\begin{frame}{Qué tiene que ver el SW libre?}
+  \begin{itemize}
+    \textbf{UN CÓDIGO QUE CUALQUIERA PUEDE REVISAR Y QUE NADIE PUEDE CONTROLAR NI APAGAR EN SOLITARIO}
+  \end{itemize}
+  \vspace{0.5cm}
+\end{frame}
+
+\section{Desinformación}
+\begin{frame}{Cambridge Analytica}
+  \cifra{87 millones}{de perfiles recogidos con solo 305.000 tests}
+  \begin{itemize}
+    \item Facebook dejaba a las apps leer los datos de los amigos.
+    \item Se usaron para mensajes políticos a medida (EE.\,UU., 2016).
+    \item Multa récord de 5.000 M\$ de la FTC.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Deepfake: el audio falso de Eslovaquia (2023)}
+  \begin{itemize}
+    \item Dos días antes de votar aparece un audio falso de un candidato.
+    \item Cae en el silencio electoral: casi no se puede desmentir.
+    \item El candidato, primero en las encuestas, pierde.
+  \end{itemize}
+  \vspace{0.5cm}
+  {\large\alert{Matiz:} no fue la única causa, pero un audio clonado es muy difícil de detectar.}
+\end{frame}
+
+\begin{frame}{Algoritmos: una caja negra}
+  \begin{itemize}
+    \item Optimizan la atención, no la información.
+    \item Su código no es público.
+    \item Crean cámaras de eco.
+    \item La UE (DSA, art.\,38) obliga a ofrecer un feed sin perfilado.
+  \end{itemize}
+  \vspace{0.5cm}
+  {\large\alert{Solo el código abierto permite auditar.}}
+\end{frame}
+
+\section{Apagones}
+\begin{frame}{Cómo se apaga internet}
+  \begin{itemize}
+    \item \textbf{BGP:} el país desaparece del mapa de internet (Egipto, 2011).
+    \item \textbf{DNS:} se bloquean webs concretas (Turquía, 2014).
+    \item \textbf{Ralentizar:} la red funciona, pero no sirve (Irán, 2026).
+    \item \textbf{Destruir:} se bombardean cables y antenas (Gaza).
+  \end{itemize}
+  \cifra{313 apagones}{en 52 países solo en 2025}
+\end{frame}
+
+\begin{frame}{Tres casos}
+  \begin{columns}[T]
+    \column{0.32\textwidth}
+      \cifra{85}{apagones en Myanmar (2024)}
+    \column{0.32\textwidth}
+      \cifra{$\sim$70\,\%}{de 2026 sin internet en Irán}
+    \column{0.32\textwidth}
+      \cifra{7 días}{de apagón total en Gaza (2024)}
+  \end{columns}
+  \vspace{0.4cm}
+  \begin{center}
+    Los apagones acompañan a la represión y a la guerra.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Censura y desinformación se refuerzan}
+  \vspace{0.5cm}
+  \begin{center}
+    {\Large Con Irán desconectado, el régimen pudo hacer pasar vídeos reales por deepfakes.}\\[1cm]
+    \alert{\Large Sin red, nadie puede verificar.}
+  \end{center}
+\end{frame}
+
+\section{Software libre}
+\begin{frame}{Tor y Snowflake: todos podemos ser puente}
+  \begin{enumerate}
+    \item Una persona censurada no puede conectarse a Tor.
+    \item Se conecta a través del navegador de un voluntario.
+    \item Desde ahí llega a internet sin censura.
+  \end{enumerate}
+  \cifra{9,6 millones}{de iraníes al día usaron Psiphon en 2026}
+\end{frame}
+
+\begin{frame}{Redes sin centro}
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \textbf{Redes mesh} (Briar)
+      \begin{itemize}
+        \item De móvil a móvil, sin operador.
+        \item Funcionan aunque caiga la red.
+      \end{itemize}
+    \column{0.48\textwidth}
+      \textbf{Fediverso} (Mastodon)
+      \begin{itemize}
+        \item Miles de servidores independientes.
+        \item Nadie puede apagarlo entero.
+      \end{itemize}
+  \end{columns}
+  \vspace{0.6cm}
+  {\large\alert{Si no hay centro, no hay interruptor.}}
+\end{frame}
+
+\section{Conclusión}
+\begin{frame}{Conclusión}
+  \begin{center}
+    {\Large Quien controla el código controla la información.}
+  \end{center}
+  \vspace{0.3cm}
+  \begin{itemize}
+    \item Algoritmos abiertos y auditables.
+    \item Una red libre que permita verificar.
+    \item Herramientas sin interruptor central.
+  \end{itemize}
+\end{frame}
+
+
+\end{document}
+
