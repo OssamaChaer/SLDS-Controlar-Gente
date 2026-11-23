@@ -170,10 +170,12 @@
 \end{frame}
 
 % 2.6 · Flock: escala
+% CORREGIDO 23/11/2026: en Robinson se buscó por marca y modelo (las llantas
+% sirvieron después para reconocer el coche). Se quita «Red compartida entre
+% agencias de todo el país» porque ninguna fuente del pie lo respalda.
 \begin{frame}{De leer matrículas a seguir personas}
   \begin{itemize}
-    \item Busca coches \alert{\textbf{sin matrícula}}: marca, modelo, llantas
-    \item Red compartida entre agencias de todo el país
+    \item Busca coches \alert{\textbf{sin matrícula}}: marca y modelo
     \item Nova: de la matrícula a la persona
     \item OS Investigate: la IA deduce tus «asociados»
   \end{itemize}
@@ -217,23 +219,26 @@
 \end{frame}
 
 % 2.9 · Reacción social
+% CORREGIDO 23/11/2026: 303 no se pudo confirmar; última cifra verificable
+% del Institute for Justice, 247 (The Marshall Project, 03/10/2026).
 \begin{frame}{La presión ciudadana frena la red}
   \begin{itemize}
-    \item \alert{\textbf{303}} gobiernos locales abandonan sus lectores de matrículas
+    \item \alert{\textbf{247}} gobiernos locales abandonan sus lectores de matrículas
     \item Denver y Mountain View rompen con Flock
     \item Amazon Ring cancela su alianza (feb. 2026)
     \item El Senado de EE.\,UU. abre una investigación
   \end{itemize}
-  \fuente{Institute for Justice (12/11/2026) · Ring (12/02/2026) · Sen. Hawley}
+  \fuente{Institute for Justice, vía The Marshall Project (03/10/2026) · Ring (12/02/2026) · Sen. Hawley}
 \end{frame}
 
 % 2.10 · Alternativa libre
 % (Si añadís una captura del mapa de maps.deflock.org u OpenStreetMap,
 % indicad «Datos © OpenStreetMap contributors, ODbL».)
+% CORREGIDO 23/11/2026: Pew cuenta las cámaras en OpenStreetMap, no «de DeFlock».
 \begin{frame}{DeFlock: auditar con software libre}
   \begin{itemize}
     \item DeFlock (MIT): mapa ciudadano en \textbf{OpenStreetMap}
-    \item \alert{\textbf{109.577}} cámaras Flock mapeadas
+    \item \alert{\textbf{109.577}} cámaras Flock en OpenStreetMap
     \item Frigate (MIT): matrículas en tu propio servidor
     \item Local $\neq$ inocuo: cambia quién controla
   \end{itemize}
