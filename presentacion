@@ -389,6 +389,191 @@
   \end{itemize}
 \end{frame}
 
+% ============================================================
+% BLOQUE 5 · HÉCTOR
+% ============================================================
+\section{Votación electrónica}
+\bloque{5}{Votación electrónica}{Héctor}
+
+% 5.1 · Apertura y mapa del bloque
+\begin{frame}{¿Por qué votar no es como hacer un Bizum?}
+  \begin{enumerate}
+    \item \textbf{Papel frente a urna digital:} qué cambia y qué está en juego.
+    \item \textbf{Experiencia internacional:} qué ha pasado al probarlo.
+    \item \textbf{Código cerrado frente a libre:} Voatz, Helios y Belenios.
+    \item \textbf{Blockchain:} cómo funciona y dónde están sus límites.
+  \end{enumerate}
+  \vspace{0.4cm}
+  {\large\alert{La ciudadanía debe poder verificar cada paso del proceso electoral.}}
+\end{frame}
+
+% 5.2 · Tabla comparativa: papel vs. voto electrónico
+\begin{frame}{Voto en papel frente a voto electrónico}
+  \begin{center}
+  \small
+  \renewcommand{\arraystretch}{1.25}
+  \begin{tabular}{p{2.3cm} p{4.9cm} p{4.9cm}}
+    & {\color{azul}\normalsize\bfseries Voto en papel} & {\color{terra}\normalsize\bfseries Voto electrónico} \\
+    \hline
+    \textbf{Recuento} & \raggedright Manual, lento y con posible error humano & \raggedright Automático, rápido y menos errores de conteo \tabularnewline
+    \hline
+    \textbf{Logística} & \raggedright Urnas, papeletas y transporte masivo & \raggedright Mayor accesibilidad (incluso desde el móvil) \tabularnewline
+    \hline
+    \textbf{Riesgos} & \raggedright Manipulación localizada & \raggedright Ciberataques y fallos a gran escala \tabularnewline
+    \hline
+    \textbf{Supervisión} & \raggedright Proceso físico visible y comprensible & \raggedright Opaco si no es auditable \tabularnewline
+  \end{tabular}
+  \end{center}
+  \vspace{0.2cm}
+  {\large\alert{Objetivo del voto electrónico:} ser \textbf{verificable}, \textbf{secreto} y \textbf{auditable}.}
+\end{frame}
+
+% 5.3 · Países que apuestan por el voto tradicional
+\begin{frame}{Voto tradicional: España y Alemania}
+  \begin{columns}[T]
+    \column{0.47\textwidth}
+      {\color{azul}\large\bfseries España}\\[0.15cm]
+      \begin{itemize}
+        \item Voto presencial en papel como norma estatal.
+        \item Pruebas piloto en 2004 y 2005.
+        \item Sin voto electrónico remoto con validez general.
+      \end{itemize}
+    \column{0.47\textwidth}
+      {\color{terra}\large\bfseries Alemania (2009)}\\[0.15cm]
+      \begin{itemize}
+        \item El Constitucional anuló las máquinas de 2005.
+        \item Ni votantes ni mesas podían verificar el registro.
+        \item Exigió supervisión sin conocimientos técnicos.
+      \end{itemize}
+  \end{columns}
+  \vspace{0.3cm}
+  {\large\alert{No se prohibió votar electrónicamente, sino no poder comprobar el escrutinio.}}
+\end{frame}
+
+% 5.4 · Países que lo han implementado o intentado
+\begin{frame}{Países que han probado el voto electrónico}
+  \begin{columns}[T]
+    \column{0.47\textwidth}
+      {\color{azul}\large\bfseries Brasil}\\[-0.15cm]
+      \begin{itemize}
+        \item Urnas electrónicas desde 2000, siempre \textbf{presenciales}.
+      \end{itemize}
+      \vspace{0.1cm}
+      {\color{azul}\large\bfseries India}\\[-0.15cm]
+      \begin{itemize}
+        \item Desde 1989; $\sim$1\,M de máquinas en 2004 ($>$670\,M de votantes).
+        \item Fallos revelados en 2006.
+      \end{itemize}
+    \column{0.47\textwidth}
+      {\color{terra}\large\bfseries Estonia}\\[-0.15cm]
+      \begin{itemize}
+        \item Voto online desde 2005 (3,13\,\% en 2007), con \textbf{papel de respaldo}.
+        \item Auditorías señalan riesgos.
+      \end{itemize}
+      \vspace{0.1cm}
+      {\color{terra}\large\bfseries Países Bajos}\\[-0.15cm]
+      \begin{itemize}
+        \item En 2007 volvió al papel tras fallos graves en sus máquinas.
+      \end{itemize}
+  \end{columns}
+  \vspace{0.15cm}
+  {\large\alert{Implementar el voto electrónico no es una progresión lineal.}}
+\end{frame}
+
+% 5.5 · Ejemplo privativo: Voatz
+\begin{frame}{Código cerrado: el caso Voatz}
+  \begin{itemize}
+    \item App móvil de votación con \textit{blockchain} y \textbf{código privativo}.
+    \item Auditoría del \textbf{MIT}: fallos para alterar, impedir o revelar el voto.
+    \begin{itemize}
+      \item \textit{Malware} o \textit{root} tomaba el control; la red filtraba datos del voto.
+      \item Un tercero podía exponer fotos y datos de identidad.
+      \item \textit{Blockchain} no protegía frente a ataques al servidor.
+    \end{itemize}
+    \item \textbf{Trail of Bits} confirmó fallos en auditoría y control de administradores.
+  \end{itemize}
+  \vspace{0.2cm}
+  {\large\alert{Usar \textit{blockchain} no garantiza seguridad: el eslabón más débil es el dispositivo.}}
+  \fuente{MIT (2020) · Trail of Bits (2020)}
+\end{frame}
+
+% 5.6 · Tabla comparativa: Voatz vs. Helios vs. Belenios
+\begin{frame}{Código cerrado frente a software libre}
+  \begin{center}
+  \small
+  \renewcommand{\arraystretch}{1.25}
+  \begin{tabular}{p{1.9cm} p{3.3cm} p{3.3cm} p{3.4cm}}
+    & {\color{terra}\normalsize\bfseries Voatz} & {\color{azul}\normalsize\bfseries Helios} & {\color{azul}\normalsize\bfseries Belenios} \\
+    \hline
+    \textbf{Licencia} & \raggedright Privativo (app móvil + \textit{blockchain}) & \raggedright Software libre (web, Ben Adida) & \raggedright Software libre (evolución de Helios) \tabularnewline
+    \hline
+    \textbf{Punto fuerte} & \raggedright Comodidad móvil & \raggedright Cifrado y pruebas verificables & \raggedright Más privacidad y defensa ante \textit{ballot stuffing} \tabularnewline
+    \hline
+    \textbf{Límite} & \raggedright Opaco; fallos críticos en auditorías & \raggedright Confiar en que la urna no añada votos & \raggedright Depende del dispositivo y credenciales \tabularnewline
+  \end{tabular}
+  \end{center}
+  \vspace{0.2cm}
+  {\large\alert{El software libre no elimina fallos, pero permite auditar y reproducir el recuento.}}
+\end{frame}
+
+% 5.7 · Blockchain: flujo de 5 pasos + 5 capas de seguridad
+\begin{frame}{Blockchain: flujo y capas de seguridad}
+  \begin{center}
+  \begin{tikzpicture}[
+      paso/.style={draw=azul,very thick,rounded corners=4pt,minimum width=2.15cm,minimum height=1.1cm,inner sep=4pt,align=center,font=\scriptsize\bfseries},
+      flecha/.style={->,very thick,draw=gris}]
+    \node[paso] (p1) at (0,0) {1. Identidad\\digital};
+    \node[paso] (p2) at (2.75,0) {2. Cifrado\\en el móvil};
+    \node[paso] (p3) at (5.50,0) {3. Registro\\en cadena};
+    \node[paso] (p4) at (8.25,0) {4. Descifrado\\y recuento};
+    \node[paso] (p5) at (11.00,0) {5. Pruebas\\verificables};
+    \draw[flecha] (p1) -- (p2);
+    \draw[flecha] (p2) -- (p3);
+    \draw[flecha] (p3) -- (p4);
+    \draw[flecha] (p4) -- (p5);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{0.2cm}
+  {\large\textbf{Cinco piezas de la seguridad real}} {\normalsize (Helios ya verifica sin \textit{blockchain}):}
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{itemize}
+        \item Criptografía robusta
+        \item Claves repartidas entre autoridades
+        \item Verificabilidad pública
+      \end{itemize}
+    \column{0.48\textwidth}
+      \begin{itemize}
+        \item Auditorías independientes
+        \item \alert{\textbf{Papel de respaldo}}
+      \end{itemize}
+  \end{columns}
+\end{frame}
+
+% 5.8 · Límites y conclusión del bloque
+\begin{frame}{Dos muros que la tecnología no derriba}
+  \begin{columns}[T]
+    \column{0.47\textwidth}
+      {\color{terra}\large\bfseries Coacción y compra de votos}\\[0.15cm]
+      \begin{itemize}
+        \item Sin cabina electoral en casa.
+        \item Alguien puede ver tu pantalla o exigir tu clave.
+        \item Debilidad estructural del voto online.
+      \end{itemize}
+    \column{0.47\textwidth}
+      {\color{terra}\large\bfseries Malware en el dispositivo}\\[0.15cm]
+      \begin{itemize}
+        \item Cambia el voto \textbf{antes} de cifrarlo y te engaña.
+        \item La criptografía no arregla un móvil comprometido.
+        \item Riesgos de duplicados y ataques DoS.
+      \end{itemize}
+  \end{columns}
+  \vspace{0.25cm}
+  \begin{center}
+    {\normalsize\alert{\textbf{Sin software libre y sin supervisión ciudadana, la tecnología no refuerza la democracia: solo la vuelve opaca.}}}
+  \end{center}
+\end{frame}
+
 
 \end{document}
 
